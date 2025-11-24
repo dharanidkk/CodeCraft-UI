@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Donuts — Handmade, fresh & joyful</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">🍩</div>
+      <div>
+        <h1>Donuts</h1>
+        <p class="subtitle">Handmade, fresh & joyful</p>
+      </div>
+    </div>
+
+    <nav class="nav-desktop">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button id="orderNowBtn" class="cta">Order Now</button>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Artisanal Donuts
+          <span class="accent">Freshly baked every morning</span>
+        </h2>
+        <p class="lead">Small-batch donuts made with love. Seasonal flavors, handcrafted glazes and playful toppings. Perfect for parties, gifts or your morning treat.</p>
+
+        <div class="hero-actions">
+          <button id="heroOrder" class="pill">Order Now</button>
+          <a href="#menu" class="link">View menu →</a>
+        </div>
+
+        <div class="stats">
+          <div class="chip"><div class="label">Baked daily</div><div class="val">Everyday</div></div>
+          <div class="chip"><div class="label">Flavors</div><div class="val">12+</div></div>
+          <div class="chip"><div class="label">Pickup</div><div class="val">In 20 min</div></div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <img id="heroImage" src="images/donut-hero.jpg" alt="Assorted donuts" />
+        </div>
+        <div class="floating floating-1">🍩</div>
+        <div class="floating floating-2">🍩</div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <h3>Popular flavors</h3>
+      <div id="menuGrid" class="menu-grid"></div>
+    </section>
+
+    <section id="about" class="about">
+      <h3>About us</h3>
+      <p>We bake every morning using small-batch techniques, local ingredients and joyful toppings. Order online or pick up from our shop.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h3>Place an order</h3>
+      <form id="orderForm" method="post" action="server.php">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" required />
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" required />
+        </div>
+        <div class="form-row">
+          <label for="items">Order (comma separated)</label>
+          <input id="items" name="items" placeholder="Classic Glaze x2, Choco Dream x1" required />
+        </div>
+        <div class="form-row">
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="notes"></textarea>
+        </div>
+        <div class="form-row actions">
+          <button type="submit" class="pill">Send Order</button>
+          <button type="button" id="resetBtn" class="muted">Reset</button>
+        </div>
+        <div id="formMessage" class="form-message" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© <span id="year"></span> Donuts — Made with ❤️</div>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
